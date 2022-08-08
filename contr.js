@@ -12,7 +12,7 @@ const cn = fn => {
 exports.getnews = cn(async (req, res, next) => {
 
 	const few = new apifew(n.find({
-		"tags":{"$nin": req.body.nottags, "$in": req.body.tags || ["all"]}, 'pup': 'true'}),req.query).ls().s()
+		"tags":{"$nin": req.body.nottags, "$in": req.body.tags || ["all"]}, 'publish': 'true'}),req.query).ls().s()
 	post = await few.qu
 	res.status(200).json({
 		status: 'success',
