@@ -17,7 +17,7 @@ const sc = new mon.Schema({
 	*/},
 
 	videos: {type: [String]},
-	parent: {
+	par: {
 		type: mon.Schema.ObjectId,
 		ref: 'news'
 	},
