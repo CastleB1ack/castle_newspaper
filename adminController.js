@@ -37,7 +37,7 @@ exports.resize =  cn(async (req, res, next) => {
 				.resize(720, 430)
 				.toFormat('jpeg')
 				.jpeg({quality: 90})
-				.toFile(`public/imgs/posts/${filename}`)
+				.toFile(`/public/imgs/posts/${filename}`)
 			req.body.imgs.push(filename)
 		})
 		)
