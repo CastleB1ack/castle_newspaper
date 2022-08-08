@@ -56,13 +56,17 @@ exports.getnews = cn(async (req, res, next) => {
 
 exports.postnews = cn(async (req,res, next) => {
 	let {post, tags} = req.body
+	if (req.body.publish === true) {
+		const publish = true
+	} else {
+		const publish = false }
 	if(typeof tags === "string") {
 		tags = `${tags},all`
 		tags = tags.split(",")
 	} else {
 		tags.push("all")
 	}
-	const thePost = await n.create({post, tags, ct: Date.now()})
+	const thePost = await n.create({post, tags, createAt: Date.now(), publish })
 	req.postid = thePost._id
 	next()
 	})
