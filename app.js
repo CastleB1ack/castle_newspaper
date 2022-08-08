@@ -12,7 +12,7 @@ const auth = require('./auth')
 const front = require('./viws')
 
 const app = exp()
-
+app.enable('trust proxy')
 app.use(exp.static(path.join(__dirname, 'public')))
 app.use(cookieParser())
 

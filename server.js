@@ -18,9 +18,13 @@ mon.connect(db, {
 
 
 const port = process.env.PORT || 8000
-app.listen(port, () => {
+const server = app.listen(port, () => {
 	console.log('running...');}) 
 
  
-
+process.on('SIGTERM', () => {
+	console.log('***** going to shutDown')
+	server.close(() => console.log('process shutDown'))
+	}
+)
   
