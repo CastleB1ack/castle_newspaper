@@ -1,0 +1,6 @@
+extends base
+
+block c
+	each x in all
+		p(style='color: blue;') name: #{x.name} 
+		pre= `the price is: ${x.pr}`
