@@ -57,9 +57,9 @@ exports.getnews = cn(async (req, res, next) => {
 exports.postnews = cn(async (req,res, next) => {
 	let {post, tags} = req.body
 	if (req.body.publish === true) {
-		const publish = true
+		publish = true
 	} else {
-		const publish = false }
+		publish = false }
 	if(typeof tags === "string") {
 		tags = `${tags},all`
 		tags = tags.split(",")
