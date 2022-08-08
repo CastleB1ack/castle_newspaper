@@ -15,12 +15,9 @@ const cn = fn => {
 
 
 exports.adminlog = cn(async (req, res, next) => {
-
 	const {email, pass} = req.body
 	if (!(email === process.env.E) || !(pass === process.env.P)) {return next(new e(`gggg`, 500))}
-
 	token = ct('role: admin')
-
 	res.status(201).cookie('token', token).json({done: "done"})
 
 })
