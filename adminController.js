@@ -37,7 +37,7 @@ exports.resize =  cn(async (req, res, next) => {
 				.resize(720, 430)
 				.toFormat('jpeg')
 				.jpeg({quality: 90})
-				.toFile(`/public/imgs/posts/${filename}`)
+				.toFile(`public/imgs/posts/${filename}`)
 			req.body.imgs.push(filename)
 		})
 		)
@@ -117,7 +117,7 @@ exports.upnews = cn(async (req, res, next) => {
 	}}
 	const post = await n.findOneAndUpdate({_id : req.params.id}, req.body,{
 		new: true, runValidators: true, context: 'query'})
-	console.log(req.body)
+	
 	res.status(200).json({
 		status: 'success',
 		data: {
