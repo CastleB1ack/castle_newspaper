@@ -10,9 +10,12 @@ const adm = require('./admin')
 const cookieParser = require('cookie-parser')
 const auth = require('./auth')
 const front = require('./viws')
-
+const cors = require('cors')
 const app = exp()
 app.enable('trust proxy')
+
+app.use(cors());
+app.options('*', cors())
 app.use(exp.static(path.join(__dirname, 'public')))
 app.use(cookieParser())
 
