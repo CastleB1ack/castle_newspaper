@@ -8,13 +8,13 @@ dot.config({path: './config.env'})
 db = process.env.DATA
 
 
-
-
-mon.connect(db, {
+/* , {
 	useNewUrlParser: true,
 	useCreatIndex: true,
 	useFindAndModify: false
-	}).then(console.log('Connected!!!'))
+	} */
+
+mon.connect(db).then(console.log('Connected!!!'))
 
 
 const port = process.env.PORT || 8000
