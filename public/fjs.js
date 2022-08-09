@@ -14,7 +14,7 @@ const posts = async (tags) => {
 	try {
 		res = await axios({
 		method: 'POST',
-		url: `http://127.0.0.1:8000/api/v1/news?sk=${sk}`,
+		url: `https://tranquil-dusk-74753.herokuapp.com/api/v1/news?sk=${sk}`,
 		data: {
 			tags 
 		}
@@ -39,3 +39,4 @@ window.onload = async () => {
 			<div class="card"><a class="img-card" href="http://www.fostrap.com/2016/03/bootstrap-3-carousel-fade-effect.html"><img src="/imgs/posts/${e.imgs[0]}" /></a><div class="card-content"><p class="">${e.post}</p></div><div class="card-read-more"><a href="http://www.fostrap.com/2016/03/bootstrap-3-carousel-fade-effect.html" class="btn btn-link btn-block">${e.tags.join("#      ")}#</a></div></div></div>`)
 	})
 }
+ 
